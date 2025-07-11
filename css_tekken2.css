@@ -1,0 +1,262 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+footer {
+    text-align: center;
+}
+
+.final {
+    position: sticky;
+    top: 0;
+    background-color: #3c2bbb;
+    color: rgb(255, 255, 255);
+    padding: 15px 0;
+    text-align: center;
+    z-index: 1000;
+    height: 220px; 
+}
+
+/*
+.menu-sticky {
+    position: sticky;
+    top: 0;
+    background-color: #3929ad;
+    color: white;
+    padding: 3vw;
+    text-align: center;
+    z-index: 1000;
+    height: 11vh; 
+}
+
+.menu-sticky li {
+    padding: 1em;
+}
+
+.menu-sticky nav a {
+    color: rgb(21, 255, 0);
+    text-decoration: none;
+    margin: 0 15px;
+}*/
+
+.secao {
+    padding: 10px ; 
+    min-height: 100vh ;
+    text-align: start;
+    scroll-margin-top: 60px;
+    margin: 10px;
+    text-align: center;
+}
+
+.secao img {
+    background-image: url(img/20250509_1147_Austrian\ President_simple_compose_01jttr6q4nek3b3cwpc5hge9sb.png);
+    background-size: contain;
+    max-width: 200vh;
+    max-height: 45vh;
+    border-radius: 20px;
+}
+
+.imagens {
+    display: flex;
+    flex-direction: row;
+}
+
+#home {
+    background-color: #f0f0f0;
+}
+
+#sobre {
+    background-color: #f0f0f0;
+}
+
+#formulario {
+    background-color: #f0f0f0;
+}
+
+#fotos {
+    background-color: #f0f0f0;
+}
+
+.sala {
+    background-image: url(sala.jpg);
+    background-size: contain;
+}
+
+.fprincipal {
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    text-align: center;
+    margin: 20px auto;
+    display: block;
+}
+
+.fprincipal img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+.logo {
+    width: 10%;
+    margin-left: 5%;
+    margin-right: 25%;
+}
+
+.logo img {
+    width: 5vh
+}
+
+.menu-sticky nav {
+    display: flex;
+}
+
+/*formmulario----------------------------------------------------------------------------------------*/
+.gridimgform {
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 10px;
+}
+
+.imgform {
+    width: 40vw;
+    height: 40vw;
+    /*object-fit: cover;*/
+}
+
+@media (width < 600px) {
+    .gridimgform {
+        grid-template-columns: 1fr;
+    }
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 20px;
+    max-width: 600px;
+    margin: auto;
+    padding: 10px;
+  }
+
+  .full-width {
+    grid-column: span 2; 
+  }
+
+  label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  input, select, textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+  }
+
+  button {
+    grid-column: span 2;
+    padding: 10px;
+    font-size: 16px;
+  }
+
+/*painel de fotos----------------------------------------------------------------------------------*/
+
+.painel {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+      padding: 10px;
+      width: 100%;
+      min-height: 70vh; /* Pelo menos 70% da altura da tela em telas grandes */
+}
+
+.foto {
+background-repeat: no-repeat;
+background-size: cover;
+background-position: center;
+aspect-ratio: 1 / 1; /* Mantém proporção quadrada */
+}
+
+/* Responsivo para telas menores */
+@media (max-width: 600px) {
+    .painel {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/*animacao----------------------------------------------------------------------------------------*/
+
+.container_grad {
+    width: 80vw;
+    height: 80vw;
+    padding: 10px;
+}
+
+.grad {  
+    width: 30vw;
+    height: 30vw;
+    border-radius: 0px;
+    background-color: red;
+  
+    transition-property: width, height,border-radius;
+    transition-duration: 1s, 1s, 1s;
+    transition-timing-function: linear, linear; 
+}
+
+.grad:hover {
+    width: 50vw;
+    height: 50vw;
+    border-radius: 50%;
+}
+
+.container_grad2 {
+    width: 80vw;
+    height: 80vw;
+    padding: 10px;
+}
+
+.grad2 {  
+width: 30vw;
+height: 30vw;
+background-color: red; 
+position: relative;
+left: 0px;
+top: 0px;
+
+animation-name: exemplo;  
+animation-duration: 4s;      
+animation-delay: 2s;
+animation-iteration-count: 3;
+animation-direction: alternate;
+animation-timing-function:ease-in-out;
+animation-fill-mode:both;
+}
+
+@keyframes exemplo {
+  0%   {background-color:red; left:0px; top:0px;}   
+  25%  {background-color:yellow; left:200px; top:0px;}
+  50%  {background-color:blue; left:200px; top:200px;}
+  75%  {background-color:green; left:0px; top:200px;}
+  100% {background-color:red; left:0px; top:0px;}
+}
+
+
+/*titulo-----------------------------------------------------------------------------------------*/
+
+@keyframes aparece {
+    0% { opacity:0 }
+    100% { opacity:1 }
+}
+
+.titulo_aparece {
+    animation: linear aparece both;
+    animation-timeline: view(auto);
+    animation-range: 10%;
+} 
+
+/*menu smooth*/
